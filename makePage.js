@@ -1,0 +1,15 @@
+function makePage() {
+    'use strict';
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+        alert("webpage " + xmlhttp.responseText + " was successfully created!");
+    }
+    var content = "<html><head><meta charset=\"utf-8\" /> </head><body>new website<script>alert(\"test\")</script></body></html>";
+    xmlhttp.open("GET","makePage.php?content=" + content,true);
+    xmlhttp.send();
+}
+
+function doThis(){
+    
+}
